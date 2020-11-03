@@ -9,7 +9,9 @@ import {FormBuilder} from "@angular/forms";
 })
 export class ProjectComponent implements OnInit {
 
-  constructor(private service:SharedService, private fb: FormBuilder) {}
+  constructor(private service:SharedService, private fb: FormBuilder) {
+    this.fb = fb;
+  }
 
   ProjectList:any = [];
 
@@ -17,7 +19,7 @@ export class ProjectComponent implements OnInit {
     this.refreshDepList();
     console.log(this.refreshDepList());
     this.ProjectList =this.fb.group({
-      projectControl: ['Projekte']
+      projectControl: ['Projects']
     });
     console.log(this.refreshDepList());
   }
