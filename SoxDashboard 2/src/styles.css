@@ -1,0 +1,542 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+body {
+    background-color: #0D1116;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #c2c3c4;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .navbar {
+    z-index: 10;
+    background-color: #000;
+    color: #D4D4D4;
+    text-align: left;
+    position: fixed;
+    font-size: 18px;
+    font-weight: 600;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #676767;
+  }
+
+  .content {
+    width:100%;
+    margin-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .footer {
+    width: 100%;
+    height: 30px;
+    background-color: #FA8072;
+  }
+
+/* Charts */
+  .advanced-pie-legend .legend-items-container .legend-items {
+    scrollbar-color: #77797C #1F2328;
+  }
+
+  .advanced-pie-legend .legend-items-container .legend-items .legend-item:hover {
+    color: white !important;
+  }
+
+  .ngx-charts text { fill: #d4d4d4; }
+
+/* Cards */
+.card-small {
+  float:left;
+  width: 250px;
+  height: 300px;
+  padding: 20px;
+}
+  .card-middle {
+    float:left;
+    padding: 20px;
+  }
+  .card-big {
+    float:left;
+    width: 660px;
+    height: 340px;
+    padding: 20px;
+  }
+  .card-topbar {
+    background-image: url("src/assets/graphics/enco-logo-card.png");
+    background-repeat: no-repeat, no-repeat;
+    padding-left: 20px;
+    font-size: 12px;
+    font-weight: 550;
+    height:24px;
+    width: 100%;
+    border-bottom: 1px solid #676767;
+  }
+
+  .card-icons {
+    background-image: url("src/assets/graphics/card-icons.png");
+    background-repeat: no-repeat, no-repeat;
+    width:59px;
+    height:16px;
+    margin-left:auto; margin-right:0;
+  }
+  .card-topbar p {
+    padding-bottom: 4px;
+    float: left;
+  }
+
+  .card-content-big {
+    padding:5px;
+    height: 300px;
+    width: 640px;
+    overflow: auto;
+    scrollbar-color: #77797C #1F2328; /* thumb and track color */
+
+  }
+
+  /*Tables*/
+  .tab-header {
+    font-weight: 600;
+    color: #eee;
+    cursor: pointer;
+  }
+
+  .tab-header:hover {
+    color: #eee;
+  }
+
+  .tab-content, .tab-content-warning, .tab-header {
+    font-size: 12px;
+  }
+
+  td {
+    padding: 2px 3px 2px 3px;
+    hyphens: auto;
+    vertical-align: top;
+  }
+
+  tr:hover{
+    color: #FA8072;
+    cursor: pointer;
+  }
+
+  /*Numbers*/
+  .big-number {
+    font-size: 58px;
+    color: #87CEFA;
+    float: left;
+  }
+  .number-type {
+    height: 100px;
+    font-size: 16px;
+    text-align: bottom;
+  }
+
+  /*Select Dropdwon*/
+  .select-menue {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 0.75em;
+    color:#E3E4E5;
+    width:300px;
+    border-style: solid;
+    border-color:#0D1116;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    background: url("src/assets/graphics/dropdown-arrow.png") left center no-repeat;
+    background-color:#0D1116;
+    background-position: right;
+    background-repeat: no-repeat;
+    letter-spacing: 0.125rem;
+
+  }
+
+  .select-menue select:focus::-ms-value {
+    background-color: transparent;
+
+  }
+
+  .select-menue option {
+    font-family: Titillium Web, arial, sans-serif;
+    letter-spacing: 0.125rem;
+
+  }
+
+  .select-menue select:hover {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+
+
+  }
+
+  .select-menue select::-ms-expand {
+    display:none;
+
+  }
+
+  .select-menue.lt-ie10 select {
+      background-image: none;
+
+  }
+
+  .select-label {
+    font-family: Titillium Web, arial, sans-serif;
+    letter-spacing: 0.125rem;
+    font-size: 1.4rem;
+    color: #CACACA;
+    letter-spacing: 0.1rem;
+    line-height: 2.6rem;
+  }
+
+  .sort-arrow img {
+    border-radius: 4px;
+    border-style: solid;
+    border-color:#0D1116;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    background-color:#0D1116;
+    background-repeat: no-repeat;
+    height:26px;
+    width:28px;
+    margin-left:10px;
+  }
+
+  /* Dialog */
+
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0,0,0,.65);
+  }
+
+  .mat-dialog-container {
+    box-shadow: 0px 5px 7px -7px rgba(195, 195, 195, 0.2),0px 6px 8px 3px rgba(195, 195, 195, 0.14),0px 9px 12px 8px rgba(195, 255, 255, 0.12);
+    background: #000;
+    color: rgba(195,195,195,.87);
+    min-width: 400px;
+ }
+
+ .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  color: rgba(195,195,195,.87);
+  background-color: #000;
+  border-color:  rgba(195,195,195,.87);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: none !important;
+  outline: none !important;
+  margin-left: auto;
+  margin-right: auto
+ }
+
+ button {
+  border-radius: 3px;
+ }
+
+ button {
+  transition-duration: 0.4s;
+}
+
+ button:hover {
+   /* Green */
+  color: #EDEEEF;
+  border-color: #EDEEEF;
+}
+
+.dialog-icons {
+  background-image: url("src/assets/graphics/dialog-icons.png");
+  background-repeat: no-repeat, no-repeat;
+  width:59px;
+  height:16px;
+  margin-left:auto; margin-right:0;
+}
+ .mat-dialog-actions {
+  padding: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 52px;
+  width:100%;
+  align-items: right;
+  margin-bottom: -24px;
+}
+
+.dialog-table td {
+  padding: 4px 4px 4px 4px;
+  hyphens: auto;
+  vertical-align: top;
+  cursor: auto;
+  color: #c2c3c4;
+}
+
+.dialog-table th {
+  font-weight: 600;
+  color: #c2c3c4;;
+  padding: 4px 4px 4px 4px;
+  hyphens: auto;
+  vertical-align: top;
+  cursor: auto;
+}
+
+.dialog-table tr:hover {
+  color: #c2c3c4;
+  width: 50%;
+}
+
+.dialog-table .priority-medium {
+  color: #FFE97F;
+}
+
+.dialog-table .priority-high {
+  color: #FA8072;
+}
+
+
+
+
+
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }

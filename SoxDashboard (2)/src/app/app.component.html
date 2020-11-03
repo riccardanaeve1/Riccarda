@@ -1,0 +1,120 @@
+<div class="navbar"><div style="width: 30%; float:left;"> <img src="assets/graphics/enco-logo.png"> &nbsp; SOX Dashboard</div>
+  <div style="float:left; width: 50%;"><div style="float:left;">Project: <select class="select-menue"><option value="" selected="">Automatic Spoiler</option>
+    <option value="">Semiconductor</option><option value="">Gearbox</option></select> </div> </div>
+  <div style="margin-left: 0; width: 20%;">
+    Config
+  </div>
+</div>
+
+<div class="content">
+
+    <div class="card-middle">
+      <div class="card-topbar"><p>Tasks by Priority</p><div class="card-icons"></div></div>
+      <div class="card-content">
+        <ngx-charts-bar-vertical
+        [view]="view_bar"
+        [scheme]="colorScheme"
+        [results]="single"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+
+    <div class="card-middle">
+      <div class="card-topbar"><p>Number of Tasks by Status</p><div class="card-icons"></div></div>
+      <div class="card-content">
+      <ngx-charts-advanced-pie-chart
+      [view]="view_advpie"
+      [scheme]="colorScheme"
+      [results]="advpie"
+      [gradient]="gradient">
+      </ngx-charts-advanced-pie-chart>
+      </div>
+    </div>
+
+    <div class="card-middle">
+      <div class="card-topbar"><p>Requirements by ASIL</p><div class="card-icons"></div></div>
+      <div class="card-content">
+        <ngx-charts-pie-chart
+        [view]="view_pie"
+        [scheme]="colorScheme"
+        [results]="pie"
+        [gradient]="gradient"
+        [legend]="showLegend"
+        [labels]="showLabels"
+        >
+      </ngx-charts-pie-chart>
+      </div>
+    </div>
+
+    <div class="card-middle">
+      <div class="card-topbar"><p>Requirements linked to Test Cases</p><div class="card-icons"></div></div>
+      <div class="card-content">
+        <ngx-charts-bar-horizontal
+  [view]="view_horbar"
+  [scheme]="colorScheme"
+  [results]="horbar"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel">
+</ngx-charts-bar-horizontal>
+      </div>
+    </div>
+
+    <div class="card-big">
+      <div class="card-topbar"><p>List of Tasks</p><div class="card-icons"></div></div>
+      <div class="card-content-big">
+        <table>
+           <tr class="tab-header"><td *ngFor = "let column of task_tbl_headers" (click)="onClickTableHeader(column, 'changesort')">{{column}}</td></tr>
+           <tr class="tab-content" *ngFor = "let row of task_tbl_rows_res"><td *ngFor = "let column of task_tbl_headers" (click)="openDialog(row)" [innerHTML]="row[column]">{{row[column]}}</td></tr>
+          
+          <!--
+          <tr class="tab-header"><td>Name</td><td>Status</td><td>Priority</td><td>Last modified</td><td>Finished</td><td>Deadline</td><td>Overdue</td></tr>
+          <tr class="tab-content-warning"><td>Messure tension</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Provide training</td><td>inactive</td><td>low</td><td>02/04/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Adjust quality constraints with customers</td><td>inactive</td><td>medium</td><td>20/05/2020</td><td>20/05/2020</td><td>07/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>Design packaging concept</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>14/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>High frequency diagnosis</td><td>inactive</td><td>high</td><td>20/05/2020</td><td></td><td>01/08/2020</td><td></td></tr>
+          <tr class="tab-content-warning"><td>Messure tension</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Provide training</td><td>inactive</td><td>low</td><td>02/04/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Adjust quality constraints with customers</td><td>inactive</td><td>medium</td><td>20/05/2020</td><td>20/05/2020</td><td>07/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>Design packaging concept</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>14/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>High frequency diagnosis</td><td>inactive</td><td>high</td><td>20/05/2020</td><td></td><td>01/08/2020</td><td></td></tr>
+          <tr class="tab-content-warning"><td>Messure tension</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Provide training</td><td>inactive</td><td>low</td><td>02/04/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Adjust quality constraints with customers</td><td>inactive</td><td>medium</td><td>20/05/2020</td><td>20/05/2020</td><td>07/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>Design packaging concept</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>14/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>High frequency diagnosis</td><td>inactive</td><td>high</td><td>20/05/2020</td><td></td><td>01/08/2020</td><td></td></tr>
+          <tr class="tab-content-warning"><td>Messure tension</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Provide training</td><td>inactive</td><td>low</td><td>02/04/2020</td><td></td><td>27/05/2020</td><td>&#9888;</td></tr>
+          <tr class="tab-content"><td>Adjust quality constraints with customers</td><td>inactive</td><td>medium</td><td>20/05/2020</td><td>20/05/2020</td><td>07/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>Design packaging concept</td><td>active</td><td>medium</td><td>28/05/2020</td><td></td><td>14/07/2020</td><td></td></tr>
+          <tr class="tab-content"><td>High frequency diagnosis</td><td>inactive</td><td>high</td><td>20/05/2020</td><td></td><td>01/08/2020</td><td></td></tr>
+        -->
+        </table>
+      </div>
+    </div>
+
+    <div class="card-small">
+      <div class="card-topbar"><p>Overdue Tasks</p><div class="card-icons"></div></div>
+      <div class="card-content">
+        <div class="big-number">7%</div><div class="number-type">(Percent)</div>
+      </div>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

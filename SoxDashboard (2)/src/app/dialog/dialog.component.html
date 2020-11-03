@@ -1,0 +1,25 @@
+<div class="card-topbar"><p>Task Details</p><div class="dialog-icons"></div></div>
+<h2 mat-dialog-title></h2>
+
+<mat-dialog-content>
+
+<table class="dialog-table">
+    <tr class="dialog-table"><th class="dialog-table">Name: </th><th class="dialog-table">{{name}}</th></tr>
+    <tr class="dialog-table"><td></td><td class="dialog-table"><span [innerHTML] = "overdue">{{overdue}}</span></td></tr>
+    <tr><td>Assigned to: </td><td>admin</td></tr>
+    <tr class="dialog-table"><td>Priority: </td><td class="dialog-table {{priority_class}}">{{priority}}</td></tr>
+    <tr class="dialog-table"><td>Status: </td><td>{{status}}</td></tr>
+    <tr class="dialog-table"><td>Deadline: </td><td>{{deadline}}</td></tr>
+    <tr class="dialog-table"><td>Last modified: </td><td>{{last_m}}</td></tr>
+    <tr class="dialog-table"><td>Finished: </td><td>{{finished}}</td></tr>
+    
+    <tr><td><td></td><td></td></tr>
+</table>    
+
+<p></p> 
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>
