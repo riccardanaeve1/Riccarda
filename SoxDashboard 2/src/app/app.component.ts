@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { DialogComponent } from './dialog/dialog.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 
 
 var sort_order = "<";
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   title = 'SoxDashboard';
 
   //Dialog
-  constructor(private matDialog: MatDialog, private http: HttpClientModule) {}
+  constructor(private matDialog: MatDialog, private http: HttpClient) {}
 
   openDialog(row: any[]) {
     const dialogConfig = new MatDialogConfig();
@@ -29,12 +29,13 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.loadData();
+   this.loadData();
 
   }
   loadData(){
-    data = this.http.get('http://localhost:8080/api/v1/project').subscribe(result => this.data = result);
-    return data;
+    return this.http.get('http://localhost:8080/api/v1/project').subscribe(data =>{
+     console.log(data);
+    })
   }
 
   //Chart

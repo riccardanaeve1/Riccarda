@@ -6,8 +6,9 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIUrl = "http://localhost:8080/api/v1/project"
+  readonly APIUrl = 'http://localhost:8080/api/v1/project'
   constructor(private http:HttpClient) {}
+
     getDeptList():Observable<any[]>{
     return this.http.get<any>(this.APIUrl);
     }

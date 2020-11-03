@@ -12,11 +12,14 @@ export class ProjectComponent implements OnInit {
   constructor(private service:SharedService, private fb: FormBuilder) {}
 
   ProjectList:any = [];
+
   ngOnInit(): void {
     this.refreshDepList();
+    console.log(this.refreshDepList());
     this.ProjectList =this.fb.group({
       projectControl: ['Projekte']
     });
+    console.log(this.refreshDepList());
   }
   refreshDepList(){
     this.service.getDeptList().subscribe(data=>{
