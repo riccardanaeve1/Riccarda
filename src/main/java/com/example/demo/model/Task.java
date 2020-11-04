@@ -9,10 +9,13 @@ public class Task {
 
     private final String name;
     private final UUID id;
+    private final boolean status;
 
-    public Task(@JsonProperty("name") @NonNull String name, UUID id) {
+
+    public Task(@JsonProperty("name") @NonNull String name, UUID id, boolean status) {
         this.name= name;
         this.id = id;
+        this.status=status;
     }
 
 
@@ -22,6 +25,10 @@ public class Task {
 
     public UUID getId() {
         return id;
+    }
+
+    public boolean isStatus() {
+        return status;
     }
 
 }

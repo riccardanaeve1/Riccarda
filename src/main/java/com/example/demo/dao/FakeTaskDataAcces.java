@@ -12,8 +12,8 @@ public class FakeTaskDataAcces implements  TaskDAO{
 
     private static List<Task> DB = new ArrayList<>();
     @Override
-    public int insertTask(UUID id, Task task) {
-        DB.add(new Task(task.getName() ,id));
+    public int insertTask(Task task, UUID id, boolean status) {
+        DB.add(new Task(task.getName() ,id, false));
         return 1;
     }
 
@@ -24,6 +24,7 @@ public class FakeTaskDataAcces implements  TaskDAO{
 
     @Override
     public List<Task> selectAllTask() {
+        DB.add(new Task("Task1", UUID.randomUUID(), false));
         return DB;
     }
 

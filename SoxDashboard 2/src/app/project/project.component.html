@@ -1,12 +1,10 @@
 
-
-<div>
-  <form [formGroup]="ProjectList">
-    <select formControlName="projectControl">
-      <option [value]="dataItem" *ngFor="let dataItem of ProjectList">
+    <select class="select-menue">
+      <option  *ngFor="let dataItem of ProjectList">
         {{dataItem.name}}</option>
     </select>
-  </form>
 
-</div>
+
+
+
 

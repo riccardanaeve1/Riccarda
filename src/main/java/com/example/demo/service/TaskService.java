@@ -19,7 +19,7 @@ public class TaskService {
         this.taskDAO = taskDAO;
     }
     public int addTask(Task task){
-        return taskDAO.addTask(task);
+        return taskDAO.insertTask(task, task.getId(), task.isStatus());
     }
     public List<Task> getAllTask() {
         return taskDAO.selectAllTask();

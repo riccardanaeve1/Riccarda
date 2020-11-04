@@ -22,8 +22,8 @@ public class FakeProjectDataAccess implements ProjectDAO {
     @Override
     public List<Project> selectAllProjects() {
         UUID id = UUID.randomUUID();
-        DB.add(new Project("Hans", id));
-        DB.add(new Project("Riccarda", id));
+        DB.add(new Project("Project1", id));
+        DB.add(new Project("Project2", id));
         return DB;
     }
 

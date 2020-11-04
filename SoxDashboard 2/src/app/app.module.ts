@@ -11,12 +11,14 @@ import {SharedService} from "./shared.service";
 import {ProjectComponent} from "./project/project.component";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponent,
     ProjectComponent,
+    TaskComponent,
 
   ],
   imports: [
