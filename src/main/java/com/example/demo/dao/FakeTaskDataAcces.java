@@ -30,6 +30,7 @@ public class FakeTaskDataAcces implements  TaskDAO{
     public List<Task> selectAllTask() {
         DB.add(new Task("Task1", UUID.randomUUID(), false));
         DB.add(new Task("Task2", UUID.randomUUID(), true));
+        DB.add(new Task("Task4", UUID.randomUUID(), true));
         return DB;
     }
 
