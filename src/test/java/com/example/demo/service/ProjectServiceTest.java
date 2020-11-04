@@ -35,7 +35,7 @@ public class ProjectServiceTest {
         ProjectService projectService = new ProjectService(projectDAO);
 
         projectService.addProject(project);
-        assertThat(projectService.getAllProjects());
+        assertThat(projectService.getAllProjects()).isEqualTo(project);
 
     }
 

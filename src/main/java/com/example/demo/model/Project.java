@@ -31,7 +31,7 @@ public class Project {
     }
 
     public UUID getId() { return id; }
-
+    /*
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -46,5 +46,15 @@ public class Project {
 
         return this.name.equals(converted.name);
     }
-
+*/
+    @Override
+    public boolean equals(Object obj){
+        Project project = (Project) obj;
+        if(project.getName() != this.getName()){
+            return false;
+        }if( id != project.getId()){
+            return false;
+        }
+        return true;
+    }
 }

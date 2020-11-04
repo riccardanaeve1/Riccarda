@@ -11,7 +11,8 @@ import {SharedService} from "./shared.service";
 import {ProjectComponent} from "./project/project.component";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { TaskComponent } from './task/task.component';
+import {TaskComponent } from './task/task.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,6 @@ import { TaskComponent } from './task/task.component';
     DialogComponent,
     ProjectComponent,
     TaskComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,8 @@ import { TaskComponent } from './task/task.component';
     MatDialogModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent],

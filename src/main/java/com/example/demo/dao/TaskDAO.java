@@ -5,6 +5,11 @@ import com.example.demo.model.Task;
 import java.util.List;
 import java.util.UUID;
 
+
+/**
+ * @author Riccarda Naeve
+ * Repository TaskDAO
+ */
 public interface TaskDAO {
 
     int  insertTask(Task Task, UUID id, boolean status);

@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
+ * @author Riccarda Naeve
+ * TaskController for Project with Post and Get Request for the Path "api/v1/project"
+ */
 @RequestMapping("api/v1/project/task")
 @RestController
 public class TaskController {

@@ -6,7 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
+/**
+ * @author Riccarda Naeve
+ * Implementation of Repository ProjectDAO
+ *
+ */
 @Repository("fakeDAO")
 public class FakeProjectDataAccess implements ProjectDAO {
 

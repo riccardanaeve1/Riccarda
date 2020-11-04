@@ -6,7 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
+/**
+ * @author Riccarda Naeve
+ * Implementation of Repository TaskDAO
+ *
+ */
 @Repository("fakedao")
 public class FakeTaskDataAcces implements  TaskDAO{
 
@@ -25,6 +29,7 @@ public class FakeTaskDataAcces implements  TaskDAO{
     @Override
     public List<Task> selectAllTask() {
         DB.add(new Task("Task1", UUID.randomUUID(), false));
+        DB.add(new Task("Task2", UUID.randomUUID(), true));
         return DB;
     }
 
