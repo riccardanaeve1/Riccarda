@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 /**
  * @author Riccarda Naeve
- * TaskController for Project with Post and Get Request for the Path "api/v1/project"
+ * TaskController for Project with Post and Get Request for the Path "api/v1/project/task"
  */
 @RequestMapping("api/v1/project/task")
 @RestController

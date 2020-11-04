@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * @author Riccarda Naeve
+ * Service Class to add and get Task from the Repository
+ */
 @Service
 public class TaskService {
 
