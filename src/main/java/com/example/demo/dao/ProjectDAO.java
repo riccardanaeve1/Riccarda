@@ -11,11 +11,8 @@ import java.util.UUID;
  */
 public interface ProjectDAO {
 
-    int insertProject(Project project, UUID id);
-    default int addProject(Project project){
-        UUID id = UUID.randomUUID();
-        return insertProject(project, id);
-    }
+    void insertProject(Project project, UUID id);
+
     List<Project> selectAllProjects();
 
 }

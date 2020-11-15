@@ -15,20 +15,17 @@ import java.util.UUID;
 public class FakeProjectDataAccess implements ProjectDAO {
 
 
-    private static List<Project> DB = new ArrayList<>();
+    private List<Project> db = new ArrayList<>();
 
     @Override
-    public int insertProject(Project project, UUID id) {
-        DB.add(new Project(project.getName(), id));
-        return 1;
+    public void insertProject(Project project, UUID id) {
+        db.add(new Project(project.getName(), id));
+
     }
 
     @Override
     public List<Project> selectAllProjects() {
-        UUID id = UUID.randomUUID();
-        DB.add(new Project("Project1", id));
-        DB.add(new Project("Project2", id));
-        return DB;
+        return db;
     }
 
 }

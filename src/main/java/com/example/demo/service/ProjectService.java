@@ -22,9 +22,9 @@ public class ProjectService {
     public ProjectService(@Qualifier("fakeDAO") ProjectDAO projectDAO){
         this.projectDAO = projectDAO;
     }
-    public int addProject(Project project){
+    public void addProject(Project project){
         //TODO Validierung(Duplizierung) überprüfen
-       return projectDAO.insertProject(project, project.getId());
+     projectDAO.insertProject(project, project.getId());
     }
     public List<Project> getAllProjects(){ return projectDAO.selectAllProjects();}
 

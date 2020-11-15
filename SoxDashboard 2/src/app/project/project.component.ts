@@ -17,16 +17,12 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshDepList();
-    console.log(this.refreshDepList());
     this.ProjectList =this.fb.group({
       projectControl: ['Projects']
     });
-    console.log(this.refreshDepList());
   }
   refreshDepList(){
-    this.service.getDeptList().subscribe(data=>{
-      this.ProjectList=data;
-    })
+    this.service.getDeptList();
   }
 
 }
