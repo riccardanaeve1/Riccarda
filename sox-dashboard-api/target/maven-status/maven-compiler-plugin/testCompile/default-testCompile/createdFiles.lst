@@ -1,0 +1,6 @@
+com/example/demo/dao/FakeProjectDataAccess.class
+com/example/demo/service/ProjectServiceTest.class
+com/example/demo/DemoApplicationTests.class
+com/example/demo/model/TaskTest.class
+com/example/demo/model/modelTest.class
+com/example/demo/dao/TaskDAOTest.class
