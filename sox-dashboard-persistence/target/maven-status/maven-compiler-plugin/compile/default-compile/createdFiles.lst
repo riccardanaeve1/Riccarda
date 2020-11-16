@@ -1,0 +1,4 @@
+com/example/demo/dao/ProjectDAO.class
+com/example/demo/dao/FakeTaskDataAcces.class
+com/example/demo/dao/FakeProjectDataAccess.class
+com/example/demo/dao/TaskDAO.class
